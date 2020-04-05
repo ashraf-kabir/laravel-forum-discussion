@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CreateReplyRequest;
 use App\Reply;
 use App\Discussion;
+use App\Notifications\NewReplyAdded;
 
 class RepliesController extends Controller
 {
@@ -41,6 +42,8 @@ class RepliesController extends Controller
             'content' => $request->content,
             'discussion_id' => $discussion->id
         ]);
+
+        $discussion->author->notify(new NewReplyAdded($discussion));
 
         session()->flash('success', 'Reply added.');
 
