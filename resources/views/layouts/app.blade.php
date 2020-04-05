@@ -16,6 +16,12 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <style>
+        .btn-info {
+            color: #fff;
+        }
+    </style>
+
     @yield('css')
 </head>
 <body>
@@ -76,9 +82,9 @@
                 <div class="row">
                     <div class="col-md-4">
                         @auth
-                            <a href="{{ route('discussions.create') }}" style="width: 100%; color: #ffffff;" class="btn btn-info my-2">Add Discussion</a>
+                            <a href="{{ route('discussions.create') }}" style="width: 100%;" class="btn btn-info my-2">Add Discussion</a>
                         @else
-                            <a href="{{ route('login') }}" style="width: 100%; color: #ffffff;" class="btn btn-info my-2">Sign in to add discussion</a>
+                            <a href="{{ route('login') }}" style="width: 100%;" class="btn btn-info my-2">Sign in to add discussion</a>
                         @endauth
                         <div class="card">
                             <div class="card-header">Channels</div>
