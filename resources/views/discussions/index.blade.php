@@ -2,18 +2,14 @@
 
 @section('content')
 
-<div class="d-flex justify-content-end mb-2">
-    <a href="{{ route('discussion.create') }}" class="btn btn-success">Add Discussion</a>
-</div>
-
 @foreach ($discussions as $discussion)
     <div class="card">
-        <div class="card-header">
-            {{ $discussion->title }}
-        </div>
+        @include('partials.discussion-header')
 
         <div class="card-body">
-            {!! $discussion->content !!}
+            <div class="text-center">
+                <strong>{{ $discussion->title }}</strong>
+            </div>
         </div>
     </div>
 @endforeach
