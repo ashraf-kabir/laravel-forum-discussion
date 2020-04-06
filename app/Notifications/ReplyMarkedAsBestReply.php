@@ -8,7 +8,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use App\Discussion;
 
-class ReplyMarkedAsBestReply extends Notification
+class ReplyMarkedAsBestReply extends Notification implements ShouldQueue
 {
     use Queueable;
 
